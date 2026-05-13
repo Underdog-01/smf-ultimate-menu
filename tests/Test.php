@@ -326,10 +326,12 @@ final class Test extends TestCase
 			->getMock();
 
 		$mock->expects($this->once())
-			 ->method('ManageMenu');
+			->method('ManageMenu')
+			->will($this->returnValue(null));
 
-		/* $mock->expects($this->once())
-			 ->method('FilesList'); */
+		$mock->expects($this->once())
+			->method('FilesList')
+			->will($this->returnValue(null));
 
 		$mock->__construct('');
 	}
